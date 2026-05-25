@@ -1,0 +1,19 @@
+name: Hello CI
+
+# Kapan workflow ini jalan? (saat ada push ke branch main)
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    # Menggunakan server virtual Ubuntu
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Langkah 1: Ambil source code dari repository
+      - uses: actions/checkout@v4
+      
+      # Langkah 2: Jalankan perintah sederhana
+      - name: Jalankan Perintah
+        run: echo "Halo! Pipeline CI/CD pertama saya berjalan sukses."
